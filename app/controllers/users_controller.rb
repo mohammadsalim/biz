@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   def show
     respond_to do |format|
       format.html
-      # look up JSON Builder
       format.json { render json: @user.to_json(include: :posts) }
     end
   end
@@ -32,6 +31,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
 end

@@ -3,8 +3,13 @@ Rails.application.routes.draw do
 
   root 'sessions#new'
 
+  resources :users do
+    member do
+      get '/all', to: 'posts#all', as: :posts_for
+    end
+  end
+
   resources :posts
-  resources :users
 
   resource :session, only: [:new, :create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.

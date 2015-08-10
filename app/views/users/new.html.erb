@@ -1,6 +1,6 @@
 <h1>Sign Up Page</h1>
 
-<form role="form" action="<%= session_path %>" method="post">
+<form role="form" action="<%= users_path %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"
   <div class="form-group form-inline">
     <input type="text" id="firstname" name="user[firstname]" placeholder="First Name" class="form-control" />
@@ -10,6 +10,6 @@
     <input type="email" id="email" name="user[email]" placeholder="Email" class="form-control" />
     <input type="password" id="password" name="user[password]" placeholder="Password" class="form-control" />
   </div>
-  <input type="submit" value="Login" />
+  <input type="submit" value="Sign Up" />
   <input type="button" value="Cancel" />
 </form>

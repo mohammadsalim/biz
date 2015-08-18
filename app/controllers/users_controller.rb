@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :fetch_user, only: :show
 
   def show
+    @posts = @user.posts.paginate(page: params[:page])
+
     respond_to do |format|
       format.html
       format.json { render json: @user.to_json(include: :posts) }

@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
 
     if @post.save
-      redirect_to current_user
+      redirect_to root_url
     else
       flash[:message] = @post.errors.full_messages.to_sentence
       redirect_to current_user

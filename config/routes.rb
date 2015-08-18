@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts
+  resources :posts, only: [:create, :destroy]
   resources :photos
 
   resource :session, only: [:new, :create, :destroy]

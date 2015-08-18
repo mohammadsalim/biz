@@ -38,6 +38,8 @@ gem 'aws-sdk'
 # Images
 gem 'paperclip'
 
+gem 'will_paginate'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

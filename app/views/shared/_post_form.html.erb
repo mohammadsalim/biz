@@ -1,0 +1,9 @@
+<form role="form" action="<%= posts_path %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="text" id="title" name="post[title]" placeholder="Title" class="form-control" />
+  <input type="text" id="content" name="post[content]" placeholder="Content" class="form-control" />
+
+  <input class="btn btn-primary" type="submit" value="Post" />
+  <!-- <input type="button" value="Cancel" /> -->
+</form>

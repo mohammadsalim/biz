@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  # get 'sessions/new'
+  root            'static_pages#home'
+  get             'static_pages/about'
+  get             'sessions/new'
+  get 'signup' => 'users#new'
 
-  root 'sessions#new'
+  # root 'sessions#new'
 
   resources :users do
     member do
@@ -10,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts
+  resources :photos
 
   resource :session, only: [:new, :create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.

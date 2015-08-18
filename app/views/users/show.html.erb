@@ -1,5 +1,18 @@
-<h1> Welcome <%= @user.first_name %> </h1>
+<% provide(:title, @user.first_name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        Welcome
+        <%= @user.first_name %>
+      </h1>
+    </section>
+  </aside>
+</div>
 
+<div>
 <% @user.posts.each do |post| %>
   <h3><%= post.content %></h3>
 <% end %>
+</div>

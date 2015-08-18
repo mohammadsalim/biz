@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render json: @user.to_json(include: :posts) }
+      format.json { render json: @user.to_json(include: :photos) }
     end
   end
 
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
 
   def fetch_user
     @user = User.includes(:posts).find(params[:id])
+    @user = User.includes(:photos).find(params[:id])
   end
 
   def user_params

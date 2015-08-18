@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Nunito|Maven+Pro' rel='stylesheet' type='text/css'>
+
   <title>Biz</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -78,14 +80,20 @@
          name="authenticity_token"
          value="<%= form_authenticity_token %>">
   <input type="text"
+         name="post[title]"
+         placeholder="Name it." autofocus="true">
+  <input type="text"
          name="post[content]"
-         placeholder="Share something.." autofocus="true">
+         placeholder="Share it..">
 </form>
+
 
 <%= button_to "Log out", session_path, method: :delete %>
 <% end %>
 
+<div class="container">
 <%= yield %>
+</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

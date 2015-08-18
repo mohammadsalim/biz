@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts
+  resources :photos
 
   resource :session, only: [:new, :create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.

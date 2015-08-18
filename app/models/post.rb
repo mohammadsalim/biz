@@ -13,5 +13,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
 
+  validates :title, length: { maximum: 20 }
   validates :content, length: { maximum: 80 }
 end

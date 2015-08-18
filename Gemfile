@@ -39,7 +39,6 @@ gem 'aws-sdk'
 gem 'paperclip'
 
 gem 'will_paginate'
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -47,7 +46,10 @@ gem 'will_paginate'
 # gem 'capistrano-rails', group: :development
 group :production do
   gem 'puma'
+  gem 'rails_12factor'
 end
+
+
 
 group :development, :test do
   # Access live debugger

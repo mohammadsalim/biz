@@ -1,13 +1,17 @@
+<% provide(:title, "Sign in") %>
 <h1>Sign In </h1>
 
-<form role="form" action="<%= session_path %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"
-  <div class="form-group form-inline">
-    <input type="email" id="email" name="user[email]" placeholder="Email" class="form-control" />
-    <input type="password" id="password" name="user[password]" placeholder="Password" class="form-control" />
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <form role="form" action="<%= session_path %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+      <input type="email" id="email" name="user[email]" placeholder="Email" class="form-control" />
+      <input type="password" id="password" name="user[password]" placeholder="Password" class="form-control" />
+
+      <input class="btn btn-primary" type="submit" value="Sign In" />
+      <!-- <input type="button" value="Cancel" /> -->
+    </form>
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
-  <input type="submit" value="Login" />
-  <input type="button" value="Cancel" />
-</form>
-<h6> - OR - </h6>
-<%= link_to "Sign Up!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>

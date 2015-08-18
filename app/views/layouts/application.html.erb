@@ -6,14 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='http://fonts.googleapis.com/css?family=Nunito|Maven+Pro' rel='stylesheet' type='text/css'>
 
-  <title>Biz</title>
+  <title><%= yield(:title) %> | Biz</title>
+
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar-fixed-top navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -45,12 +46,12 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <!-- <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      </form> -->
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Messages</a></li>
         <li class="dropdown">
@@ -74,7 +75,7 @@
 </div>
 <% end %>
 
-<% if current_user %>
+<!-- <% if current_user %>
 <form action="<%= posts_path %>" method="post">
   <input type="hidden"
          name="authenticity_token"
@@ -89,10 +90,25 @@
 
 
 <%= button_to "Log out", session_path, method: :delete %>
-<% end %>
+<% end %> -->
 
 <div class="container">
+
 <%= yield %>
+
+<footer class="footer">
+  <small>
+    <a href="#">Biz</a>
+    by <a href="http://www.michaelhartl.com/">Mohammad Salim</a>
+  </small>
+  <nav>
+    <ul>
+      <li><%= link_to "About",   '#' %></li>
+      <li><%= link_to "Contact", '#' %></li>
+      <li><a href="#">Github</a></li>
+    </ul>
+  </nav>
+</footer>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

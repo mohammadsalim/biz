@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      flash[:success] = "Welcome to Biz!"
       login!(@user)
       redirect_to @user
       # redirect_to user_path(@user.id)

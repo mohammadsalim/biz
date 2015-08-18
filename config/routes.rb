@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  # get 'sessions/new'
+  root            'static_pages#home'
+  get             'static_pages/about'
+  get             'sessions/new'
+  get 'signup' => 'users#new'
 
-  root 'sessions#new'
+  # root 'sessions#new'
 
   resources :users do
     member do
